@@ -1,0 +1,57 @@
+import estadios.*
+import afa.*
+import jugadores.*
+
+test "Ganancia neta partido de homenaje de Messi"{
+	
+	afa.elegirCancha(laBombonera)
+	afa.cantidadDeEntradasAVenderEnPartidoHomenajeDe(messi)
+	
+	assert.equals(afa.gananciaPartidoHomenaje(messi), 480000000)
+	
+}
+
+test "La popularidad del bicho  SIuuuuuuuu es la mitad de messi"{
+	
+	assert.equals(ronaldo.nivelPopularidad() * 2, messi.nivelPopularidad())
+	
+}
+
+test "popularidad de mbappe es el doble de su edad más la cantidad de goles hechos en finales del mundo"{
+	
+	assert.equals(mbappe.nivelPopularidad(), mbappe.edad() * 2 / 100 + 0.4 )
+	
+	
+}
+
+test "hay inflacion y repercute en las entradas"{
+	
+	assert.equals(10000, afa.valorEntrada())
+	afa.hayInflacion(10)
+	assert.notThat(afa.valorEntrada() == 10000)
+	
+}
+
+test "En que condiciones esta el Monumental "{
+	
+	monumental.estaEnObras()
+	monumental.estadioTerminado()
+	assert.notThat(monumental.estaEnObras())
+}
+
+
+test "Messi habla del chiqui tapia"{
+	
+	messi.perderPopularidad()
+	assert.notThat(messi.nivelPopularidad()== 0.98)
+	
+}
+
+test "Cumpleanos de KIKI Mbappe"{
+	
+	mbappe.cumplirAnos()
+	assert.equals(26, mbappe.edad())
+	
+	
+}
+
